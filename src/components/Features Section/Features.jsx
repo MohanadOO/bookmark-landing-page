@@ -10,10 +10,10 @@ function Features() {
     'text-neutral-grayish-blue hover:text-primary-red transition-colors'
 
   return (
-    <div id='features' className='text-center mt-24 mx-3 md:mx-0'>
+    <div id='features' className='text-center mt-24 mx-3 md:mx-0 '>
       <div className='md:max-w-[500px] md:mx-auto'>
-        <h2 className='text-2xl font-bold mb-3'>Features</h2>
-        <p className='text-neutral-grayish-blue text-sm md:text-base leading-6 md:mb-14'>
+        <h2 className='text-2xl lg:text-3xl font-bold mb-3'>Features</h2>
+        <p className='text-neutral-grayish-blue text-sm md:text-base lg:text-lg leading-6 md:mb-14'>
           Our aim is to make it quick and easy for you to access your favourite
           websites. Your bookmarks sync between your devices so you can access
           them on the go.

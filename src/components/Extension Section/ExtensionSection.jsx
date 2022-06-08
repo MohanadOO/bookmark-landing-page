@@ -3,8 +3,10 @@ import ExtensionCard from './ExtensionCard'
 function ExtensionSection() {
   return (
     <div className='text-center mt-24 mx-3'>
-      <h2 className='text-2xl font-bold mb-3'>Download the extension</h2>
-      <p className='text-neutral-grayish-blue md:max-w-[500px] md:mx-auto text-sm md:text-base leading-6 '>
+      <h2 className='text-2xl xl:text-3xl font-bold mb-3'>
+        Download the extension
+      </h2>
+      <p className='text-neutral-grayish-blue md:max-w-[500px] md:mx-auto text-sm md:text-base xl:text-lg leading-6 '>
         We’ve got more browsers in the pipeline. Please do let us know if you’ve
         got a favourite you’d like us to prioritize.
       </p>

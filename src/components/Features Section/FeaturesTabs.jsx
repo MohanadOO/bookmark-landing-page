@@ -13,8 +13,10 @@ function FeaturesTabs({ tab }) {
           />
         </div>
         <div className='mt-12 md:mt-0 md:max-w-[300px] lg:max-w-[390px] xl:max-w-[500px] md:mx-auto'>
-          <h2 className='text-2xl mb-3 font-bold'>{TabsData[tab - 1].title}</h2>
-          <p className='text-neutral-grayish-blue text-sm md:text-md'>
+          <h2 className='text-2xl xl:text-3xl mb-3 font-bold'>
+            {TabsData[tab - 1].title}
+          </h2>
+          <p className='text-neutral-grayish-blue text-sm lg:text-base'>
             {TabsData[tab - 1].body}
           </p>
           <button className='py-3 px-8 bg-primary-soft-blue rounded-md text-white shadow-lg self-center mt-5 hidden md:block border-2 hover:border-primary-soft-blue hover:text-primary-soft-blue hover:bg-white transition-colors'>

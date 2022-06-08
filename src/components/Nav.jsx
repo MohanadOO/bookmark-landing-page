@@ -4,7 +4,10 @@ function Nav() {
   const [openMenu, setOpenMenu] = useState(false)
 
   return (
-    <nav className='absolute top-0 z-50 w-screen p-6' id='main_nav'>
+    <nav
+      className='absolute top-0 z-50 w-full p-6 overflow-hidden'
+      id='main_nav'
+    >
       <ul className='flex items-center md:hidden'>
         {!openMenu ? (
           <>
@@ -53,7 +56,7 @@ function Nav() {
         )}
       </ul>
 
-      <ul className='hidden md:flex md:items-center md:gap-10 text-neutral-very-dark-blue text-sm mx-10'>
+      <ul className='hidden md:flex md:items-center md:gap-10 text-neutral-grayish-blue text-sm mx-10 xl:px-28 xl:my-4'>
         <li className='cursor-pointer  hover:text-primary-red transition-colors'>
           <a href='#'>
             <img src='/images/logo-bookmark.svg' alt='logo_bookmark' />
