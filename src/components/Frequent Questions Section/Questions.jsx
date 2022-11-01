@@ -1,29 +1,22 @@
 import { Disclosure, Transition } from '@headlessui/react'
-import { useRef } from 'react'
-import QuestionsData from './QuestionsData'
+import { useTranslation } from 'react-i18next'
 
 function Questions() {
-  const openQuestion = useRef(false)
-
-  function handleQuestion() {
-    if (openQuestion.current.open) {
-      console.log(openQuestion.current)
-      return (openQuestion.current.open = true)
-    }
-    return (openQuestion.current.open = false)
-  }
-
+  const { t } = useTranslation(['questions', 'common'])
+  const questionsData = t('questionsArr', { returnObjects: true })
   return (
-    <div className='flex flex-col gap-1 items-start text-left mt-20 md:mt-10'>
-      {QuestionsData.map((question) => {
+    <div className='flex flex-col gap-1 items-start ltr:text-left rtl:text-right mt-20 md:mt-10'>
+      {questionsData.map((question, index) => {
         return (
-          <Disclosure>
+          <Disclosure key={index}>
             {({ open }) => (
               <>
                 <Disclosure.Button className='flex items-center w-full border-b-2 py-5 hover:text-primary-red transition-colors'>
                   {question.question}
                   <img
-                    className={`${open ? 'ml-auto rotate-180' : 'ml-auto'}`}
+                    className={`${
+                      open ? 'rotate-180' : ''
+                    } ltr:ml-auto rtl:mr-auto`}
                     src={`${
                       !open
                         ? '/images/icon-arrow.svg'
@@ -50,7 +43,7 @@ function Questions() {
         )
       })}
       <button className='py-3 px-8 bg-primary-soft-blue rounded-md text-white shadow-lg self-center my-16 border-2 hover:border-primary-soft-blue hover:text-primary-soft-blue hover:bg-white transition-colors'>
-        More Info
+        {t('common:infoBtn')}
       </button>
     </div>
   )

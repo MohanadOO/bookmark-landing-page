@@ -1,12 +1,17 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { TwitterIcon, FacebookIcon } from '../components/icons'
 
 function Footer() {
+  const { t } = useTranslation(['translation', 'common'])
+
+  const tNavigation = (translate) => t(`navigation.${translate}`)
+  const tFooter = (translate) => t(`footer.${translate}`)
+
   const [emailInput, setEmailInput] = useState('')
   const [wrongEmail, setWrongEmail] = useState(null)
 
   function handleForm(e) {
-    console.log('h')
     e.preventDefault()
     if (emailInput.match(/^\w+@\w+\.\w+$/g)) {
       setWrongEmail(true)
@@ -19,10 +24,10 @@ function Footer() {
     <footer>
       <div className='bg-primary-soft-blue text-white py-16 px-10 md:px-52 text-center md:flex flex-col items-center'>
         <p className='font-light text-sm xl:text-base tracking-[0.25em] uppercase'>
-          35,000+ already joined
+          {tFooter('title')}
         </p>
         <h3 className=' text-xl md:text-2xl xl:text-3xl md:max-w-[350px] mt-2 mb-5 md:my-10'>
-          Stay up-to-date with what we’re doing
+          {tFooter('subTitle')}
         </h3>
         <form
           className='flex flex-col md:flex-row md:items-center gap-5'
@@ -33,7 +38,7 @@ function Footer() {
               type='email'
               name='email'
               id='email'
-              placeholder='Enter your email address'
+              placeholder={t('common:inputEmail')}
               value={emailInput}
               onChange={(e) => setEmailInput(e.target.value)}
               className={`${
@@ -52,7 +57,7 @@ function Footer() {
                   alt='icon_error'
                 />
                 <p className='absolute bottom-0 italic text-xs font-light p-1 bg-primary-red w-full  rounded-bl-md rounded-br-md'>
-                  Whoops, make sure it's an email
+                  {t('common:inputEmailError')}
                 </p>
               </>
             ) : (
@@ -60,7 +65,7 @@ function Footer() {
             )}
           </div>
           <button className='bg-primary-red p-3 rounded-md md:px-7 border-2 border-primary-red hover:text-primary-red hover:bg-white transition-colors'>
-            Contact Us
+            {t('common:contactBtn')}
           </button>
         </form>
       </div>
@@ -69,13 +74,13 @@ function Footer() {
           <img src='/images/logo-bookmark_footer.svg' alt='logo_bookmark' />
         </li>
         <li className='cursor-pointer hover:text-primary-red transition-colors'>
-          Features
+          {tNavigation('features')}
         </li>
         <li className='cursor-pointer hover:text-primary-red transition-colors'>
-          Pricing
+          {tNavigation('price')}
         </li>
         <li className='cursor-pointer hover:text-primary-red transition-colors'>
-          Contact
+          {tNavigation('contact')}
         </li>
         <div className='flex self-center gap-8 items-center mt-4 md:mt-0 md:ml-auto'>
           <li>
